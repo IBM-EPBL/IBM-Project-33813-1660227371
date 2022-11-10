@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>PNT2022TMID43448 Deep learning fundus image analysis for early detection of Diabetic Retinopathy</title>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+	</head>
+	<style>
+		html,body{
+		margin:0;
+		width:100%;
+		height:100%;
+		font-family:Roboto;
+		display: flex;
+		flex-direction: column;
+		}
+		.header{
+		position: fixed;
+		top: 0px;
+		width:100%;
+		height:100px;
+		background-color:dimgrey;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		}
+		#heading{
+		padding:10px;
+		color:white;
+		font-size:25px;
+		font-style: italic
+		}
+		#option1{
+		margin-right:2px;
+		padding:10px;
+		color:white;
+		font-size:20px;
+		}
+		.options{
+		display: flex;
+		}
+		a{
+		text-decoration:none;
+		color:white;
+		}
+		#option1:hover{
+		border:1px solid white;
+		border-radius:10px;
+		background-color:black;
+		}
+		.container{
+		margin-top: 100px;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		border:2px solid black;
+		}
+		.retinaimg{
+		margin-top:25px;
+		height:100px;
+		width: 100px;
+		border-radius:50%;
+		padding:20px;
+		}
+		.stages{
+		height:500px;
+		width:600px
+		}
+		hr {
+		width:100%;
+		border:1px solid black;
+		background:black;
+		}
+		</style>
+	<body>
+		<div class="header">
+			<p id="heading">Prediction</p>
+			<div class="options">
+				<p id="option1"><a href="index">Home</a></p>
+				<p id="option1"><a href="logout.html">Logout</a></p>
+			</div>
+		</div>
+		<div class="container">
+			<img class="retinaimg", src="{{image}}",alt="RetinaImage">
+			<form class="frm" action="http://127.0.0.1:5000/afterlogin" method="POST">
+				<input type="file" placeholder="Choose file" required>
+				<button type="submit" name="submit" value="submit" >Submit</button>
+			</form>
+		</div>
+		<br><br>
+			<center><p>Diabetic Retinopathy Classification is: {{prediction}}</p></center>
+			<hr>
+			<center><img class="stages" src="{{image2}}",alt="StagesImage"></center>
+		
+	</body>
+</html>
