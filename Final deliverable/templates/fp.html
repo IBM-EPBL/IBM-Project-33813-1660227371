@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>PNT2022TMID43448 Deep learning fundus image analysis for early detection of Diabetic Retinopathy</title>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+	</head>
+	<style>
+		html,body{
+		margin:0;
+		width:100%;
+		height:100%;
+		font-family:Roboto;
+		display: flex;
+		flex-direction: column;
+		}
+		.header{
+		position: fixed;
+		top: 0px;
+		width:100%;
+		height:100px;
+		background-color:dimgrey;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		}
+		#heading{
+		padding:10px;
+		color:white;
+		font-size:25px;
+		font-style: italic
+		}
+		#option1{
+		margin-right:2px;
+		padding:10px;
+		color:white;
+		font-size:20px;
+		}
+		.options{
+		display: flex;
+		}
+		a{
+		text-decoration:none;
+		color:white;
+		}
+		#option1:hover{
+		border:1px solid white;
+		border-radius:10px;
+		background-color:black;
+		}
+		.content{
+		margin:auto;
+		}
+		.frm{
+		margin-top: 100px;
+		border:2px solid black;
+		padding:30px;
+		border-radius:5px;
+		}
+		.inputs{
+		padding:10px;
+		border-radius:5px;
+		outline:0;
+		width:250px;
+		}
+		.btn{
+		cursor: pointer;
+		width:-webkit-fill-available;
+		}
+		.si:hover{
+			color:white;
+			background-color:dimgrey;
+		}
+		img{
+		height:90px;
+		width:90px;
+		border-radius:50%;
+		}
+		</style>
+	<body>
+		<div class="header">
+			<p id="heading">FORGOT PASSWORD</p>
+			<div class="options">
+				<p id="option1"><a href="index">Home</a></p>
+			</div>
+		</div>
+		
+		<div class="content">
+		<center><p style="color: blue;margin-top: 100px;">{{predict}}</p></center><br>
+			<form class="frm" action="http://127.0.0.1:5000/afterfp" method="POST">
+					<h3><center><img src="{{image}}"alt="forgotpw"></center></h3>
+					<input type="text" class="inputs" placeholder="Phone number" name="phoneno" required><br><br>
+					<input type="text" class="inputs" placeholder="Your favourite pet(Security Question)" name="secques" required><br><br>
+					<input type="password" class="inputs" placeholder="New Password" name="npwd"  required><br><br>
+					<input type="password" class="inputs" placeholder="Confirm Password" name="cpwd"  required><br><br>
+					<button type="submit" class="inputs btn si" >Submit</button>
+					<br><br>
+					
+			</form>
+		</div>
+		
+		
+	</body>
+</html>
